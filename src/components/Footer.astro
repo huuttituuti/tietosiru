@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.svg";
+import posti from "../assets/posti.png";
+---
+
+<footer>
+  <div class="text-gray p-7 border-t-1 border-border">
+    <div
+      class="max-w-[1300px] w-[100%] ml-auto mr-auto flex flex-row justify-between items-stretch"
+    >
+      <div class="">
+        <p>
+          © {new Date().getFullYear()} Tietosiru - Forensic Electrical Investigation
+        </p>
+      </div>
+      <nav class="flex flex-row items-center space-x-10">
+        <div class="flex flex-row space-x-1">
+          <p class="font-normal">Puhelin:</p>
+          <a class="pl-1" href="tel:0452384114">045 238 4114</a>
+        </div>
+        <div class="flex flex-row items-center space-x-2">
+          <p class="font-normal">Sähköposti:</p>
+          <Image width="125" src={posti} alt="Sähköpostiosoite" />
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>

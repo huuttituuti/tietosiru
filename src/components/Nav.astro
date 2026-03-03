@@ -1,0 +1,111 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.svg";
+import lang from "../assets/globe.svg";
+import { navLinks } from "../data/navData.json";
+//console.log(navLinks);
+---
+
+<!-- Include this script tag or install `@tailwindplus/elements` via npm: --><!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
+<header>
+  <nav
+    class="navbar bg-linear-260 bg-white text-gray shadow-sm p-3 pr-10 pl-10 border-b-1 border-border"
+  >
+    <div
+      class="max-w-[1300px] flex flex-row justify-around w-[100%] ml-auto mr-auto items-center"
+    >
+      <a href="/" class="flex">
+        <Image src={logo} width="200" alt="Tietosiru logo" />
+      </a>
+      <div class="ml-auto text-dark">
+        <ul class="text-[1rem] space-x-10 flex flex-row">
+          {
+            navLinks
+              .filter((entry) => entry.href !== "/")
+              .map((entry) => (
+                <li>
+                  <a
+                    class="relative inline-block underline-animate"
+                    href={entry.href}
+                  >
+                    {entry.text}
+                  </a>
+                </li>
+              ))
+          }
+        </ul>
+      </div>
+      <div class="ml-15">
+        <ul class="text-[1rem] space-x-2">
+          <li>
+            <div class="relative">
+              <button
+                id="dropdownButton"
+                class="group bg-white transition-colors duration-200 hover:text-accent outline-none border-none overflow-hidden h-[40px] relative flex flex-row items-center space-x-[5px] cursor-pointer z-2"
+              >
+                <p class="sr-only">Valitse kieli</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                  ><path
+                    d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm81.57,64H169.19a132.58,132.58,0,0,0-25.73-50.67A90.29,90.29,0,0,1,209.57,90ZM218,128a89.7,89.7,0,0,1-3.83,26H171.81a155.43,155.43,0,0,0,0-52h42.36A89.7,89.7,0,0,1,218,128Zm-90,87.83a110,110,0,0,1-15.19-19.45A124.24,124.24,0,0,1,99.35,166h57.3a124.24,124.24,0,0,1-13.46,30.38A110,110,0,0,1,128,215.83ZM96.45,154a139.18,139.18,0,0,1,0-52h63.1a139.18,139.18,0,0,1,0,52ZM38,128a89.7,89.7,0,0,1,3.83-26H84.19a155.43,155.43,0,0,0,0,52H41.83A89.7,89.7,0,0,1,38,128Zm90-87.83a110,110,0,0,1,15.19,19.45A124.24,124.24,0,0,1,156.65,90H99.35a124.24,124.24,0,0,1,13.46-30.38A110,110,0,0,1,128,40.17Zm-15.46-.84A132.58,132.58,0,0,0,86.81,90H46.43A90.29,90.29,0,0,1,112.54,39.33ZM46.43,166H86.81a132.58,132.58,0,0,0,25.73,50.67A90.29,90.29,0,0,1,46.43,166Zm97,50.67A132.58,132.58,0,0,0,169.19,166h40.38A90.29,90.29,0,0,1,143.46,216.67Z"
+                  ></path></svg
+                >
+                <p id="selectedLanguage">Suomi</p>
+                <svg
+                  id="dropdownIcon"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="15"
+                  fill="currentColor"
+                  class="transition-transform duration-200"
+                  viewBox="0 0 256 256"
+                  ><path
+                    d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                  ></path></svg
+                >
+              </button>
+              <ul
+                role="list"
+                id="dropdownMenu"
+                class="bg-white top-[100%] left-0 rounded-t-none p-7 pt-4 pb-3 absolute flex-col shadow-2xs z-index-1 hidden"
+              >
+                <li
+                  class="pt-1 pb-1 cursor-pointer hover:text-accent transition-colors duration-200"
+                >
+                  <a>Suomi</a>
+                </li>
+                <li
+                  class="pt-1 pb-1 cursor-pointer hover:text-accent transition-colors duration-200"
+                >
+                  <a>Svenska</a>
+                </li>
+                <li
+                  class="pt-1 pb-1 cursor-pointer hover:text-accent transition-colors duration-200"
+                >
+                  <a>English</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const dropdownButton = document.getElementById("dropdownButton");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  const dropdownIcon = document.getElementById("dropdownIcon");
+
+  dropdownButton.addEventListener("click", () => {
+    dropdownMenu.classList.toggle("hidden");
+    dropdownMenu.classList.toggle("animate-fadeIn");
+    dropdownIcon.classList.toggle("rotate-180");
+  });
+</script>
