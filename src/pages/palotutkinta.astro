@@ -10,136 +10,39 @@ import heroImage from "../assets/tietosiru-kuva-1.webp";
 
 <Layout>
   <main>
-    <div class="h-[80px] bg-light"></div>
-    <section class="bg-white border-t-1 border-b-1 border-border">
-      <div class="max-w-[1400px] w-[100%] ml-auto mr-auto p-10 pb-15">
-        <div class="flex flex-row space-y-10 justify-between">
-          <div class="max-w-[700px]">
-            <h1 class="flex flex-col text-[2.5rem]">
-              <span
-                class="text-accent font-light text-[1.15rem] tracking-[2px] uppercase"
-                >Service</span
-              >Fire Investigation
-            </h1>
+    <section class="bg-white border-border min-h-[70vh]">
+      <div class="max-w-[1300px] w-[100%] ml-auto mr-auto p-10 pb-15">
+        <div class="flex flex-row space-y-10 justify-between items-center">
+          <div class="max-w-[600px]">
+            <h1 class="flex flex-col text-[2.5rem] text-main">Palotutkinta</h1>
             <p class="text-gray mt-5">
-              Tietosiru Oy has expertise in an area of forensic electrical
-              investigation. Usually we act in a team of investigators from
-              several areas of expertise.
+              Tietosiru Oy on erikoistunut sähköisten syttymissyiden
+              selvittämiseen. Voimme tehdä tutkintaa itsenäisesti, mutta
+              useimmiten toimimme osana tutkintaryhmää, johon kuuluu
+              viranomaisten lisäksi useita eri alojen ammattilaisia.
             </p>
+            <div class="mt-10">
+              <h2 class="text-[1.65rem] text-main mb-0.5">Palveluja</h2>
+              <div class="h-[1px] w-[100%] bg-border mb-3"></div>
+              <ul
+                class="text-gray flex flex-col space-y-1 list-disc list-inside"
+              >
+                <li>Paikkatutkinta</li>
+                <li>Palonäytteiden taltiointi ja laboratoriotutkinta</li>
+                <li>Vahinkotilanteiden rekonstruointi</li>
+                <li>Sähkölaitteiden polttokokeet</li>
+                <li>Tutkintaselosteen laadinta</li>
+                <li>Videoraportit</li>
+              </ul>
+            </div>
           </div>
-          <div class="border-l-1 border-border pl-10">
-            <h2 class="uppercase tracking-[2px] mb-3">Scope</h2>
-            <ul class="text-gray flex flex-col space-y-2 list-disc list-inside">
-              <li>Fire scene investigation</li>
-              <li>Electrical fault analysis</li>
-              <li>Fire origin determination</li>
-              <li>Post-fire safety assessments</li>
-            </ul>
+          <div class="pl-10 h-[100%">
+            <Image
+              src={heroImage}
+              width="500"
+              alt="Kuvituskuva palotutkinnasta"
+            />
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-white p-6 pb-0">
-      <div class="max-w-[1400px] w-[100%] ml-auto mr-auto p-10 pb-5">
-        <h2 class="text-[1.25rem] font-medium tracking-[1.5px] uppercase">
-          Investigation Process
-        </h2>
-        <p class="mt-4 max-w-[60%] text-gray">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit.
-        </p>
-      </div>
-
-      <div class="pb-6">
-        <div
-          class="max-w-[1400px] mr-auto ml-auto w-[100%] p-10 flex-row flex justify-center items-start space-x-10"
-        >
-          <CardProcess
-            heading="Initial Assessment"
-            text="Our team conducts a thorough initial assessment of the fire scene, gathering evidence and documenting the surroundings."
-          />
-          <CardProcess
-            heading="Electrical Analysis"
-            text="We analyze electrical components and systems to identify potential causes of the fire, such as short circuits or faulty wiring."
-          />
-          <CardProcess
-            heading="Fire Origin Determination"
-            text="Using our expertise, we determine the origin of the fire and assess contributing factors to understand how it started."
-          />
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-white p-10 pt-0 pb-0">
-      <div class="max-w-[1400px] w-[100%] ml-auto mr-auto p-5 pb-15">
-        <div class="bg-dark p-15 rounded-md text-white">
-          <h2 class="text-[1.15rem] font-normal tracking-[1.5px]">
-            Technical documentation
-          </h2>
-          <p class="mt-4">
-            After the investigation, we compile a comprehensive report detailing
-            our findings, analysis, and conclusions. This documentation is
-            crucial for legal proceedings and insurance claims.
-          </p>
-        </div>
-      </div>
-
-      <!-- <section class="max-w-[1400px] w-[100%] ml-auto mr-auto p-10 pb-15">
-      <div
-        class="mr-auto ml-auto w-[100%] p-10 flex-row flex justify-center items-start space-x-10"
-      >
-        <Image src={heroImage} width="500" alt="Teksti" />
-        <div class="p-2 pt-0 space-y-3 max-w-[500px]">
-          <h1 class="text-2xl font-bold">Palotutkinta</h1>
-          <p>
-            Tietosiru Oy on perheyritys, joka aloitti toimintansa elektroniikan
-            parissa 1980-luvun lopulla. Toimintaa on ajan myötä laajennettu
-            kysynnän mukaan. Nykyään Tietosiru palvelee monissa teknisen alan
-            käytännön tehtävissä.
-            <br />
-            <br />Provident cupiditate voluptatem et in. Quaerat fugiat ut
-            assumenda excepturi exercitationem quasi. In deleniti eaque aut
-            repudiandae et a id nisi.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="max-w-[1400px] w-[100%] ml-auto mr-auto pb-15">
-      <div class="flex flex-col items-start justify-center space-y-5">
-        <h3 class="mr-auto ml-auto text-2xl font-bold">Galleria</h3>
-        <div
-          class="flex flex-row items-start justify-center flex-wrap space-x-5 space-y-5"
-        >
-          <Image src={heroImage} width="400" alt="kuva" />
-          <Image src={heroImage} width="400" alt="kuva" />
-          <Image src={heroImage} width="400" alt="kuva" />
-          <Image src={heroImage} width="400" alt="kuva" />
-          <Image src={heroImage} width="400" alt="kuva" />
-          <Image src={heroImage} width="400" alt="kuva" />
-        </div>
-      </div>
-    </section> -->
-    </section>
-
-    <section>
-      <div class="max-w-[1400px] w-[100%] ml-auto mr-auto p-10 pb-15 pt-10">
-        <h2
-          class="text-[1.5rem] font-medium tracking-[1.5px] uppercase mb-10 border-b-1 border-gray-300 pb-2"
-        >
-          Galleria
-        </h2>
-        <div
-          class="flex flex-row items-start justify-start flex-wrap space-x-10 space-y-10"
-        >
-          <Image src={heroImage} width="400" alt="Teksti" />
-          <Image src={heroImage} width="400" alt="Teksti" />
-          <Image src={heroImage} width="400" alt="Teksti" />
-          <Image src={heroImage} width="400" alt="Teksti" />
-          <Image src={heroImage} width="400" alt="Teksti" />
         </div>
       </div>
     </section>
